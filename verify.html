@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+   <!-- Compiled and minified CSS -->
+    <!-- Compiled and minified JavaScript -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>-->
+      <link href="style.css" type="text/css" rel="stylesheet" media="screen,projection"/>   
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+
+<meta charset="utf-8">
+</head>
+         
+<title>Mycert-증명서 검증 서비스</title>
+<header>
+  <nav class="indigo darken-4">
+    <div class="container">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">MyCert</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      </ul>
+    </div>
+    </div>
+  </nav>
+</header>
+<body>
+    <div class="indigo">
+        <div class="cover">
+         <center>
+         <h2><b>Verify Here</b></h2>
+            <form  class="flex-form">
+            <label for="from">
+            </label>
+            <input type="search" placeholder="Certificate Url" name="url" class="url" id="url" oninput="checkUrl()">
+            <input type="submit" value="Search">
+            </form>
+        </center>
+            <div class="check" >
+                <p id="check"></p>
+            </div>
+        </div>
+        </div>
+        <div class="container">
+            
+    <div class="container service-info" style="margin-top: 10vh">
+        <center>
+        <h4>Prove yourself with MyCert</h4>
+        <h6>MyCert는 블록체인 기반의 인증서 발급 및 검증 플랫폼입니다.</h6>
+        </center>
+    </div>
+    
+        <div class="container row">
+            <center>
+            <div>
+            <h4>How it works</h4>
+            </div>
+            </center>
+        </div>
+        
+    <div class="service-info row">
+        <div class="col s12 m4">
+            <h5>발급</h5>
+            <h6>인증서 발급자는 인증서를 작성한 뒤 발급자 본인을 인증할 수 있는 전자 서명을 남깁니다.</h6>
+        </div>
+        <div class="col s12 m4">
+            <h5>앵커링</h5>
+            <h6>서명된 인증서는 SHA-256 해시 함수로 요약되어 Etherium 블록체인에 저장됩니다.해시 요약본을 보고 인증서의 내용을 확인하는 것은 불가능하므로, 인증서 정보는 노출되지 않습니다.해시 요약본이 저장되고 나면 여러분께 인증서 링크가 전송됩니다.</h6>
+        </div>
+        <div class="col s12 m4">
+            <h5>검증</h5>
+            <h6>인증서 링크를 MyCert 검증 페이지에 입력하면, MyCert는 인증서의 해시 요약본이 블록체인에 저장된 해시 요약본과 일치하는지 검증합니다. 해시 요약본이 일치한다면 인증서가 위조되지 않았다는 사실이 증명됩니다.여러분은 인증서 링크를 원하는 곳에 게시하여 누구나 인증서를 검증할 수 있게 할 수 있습니다.</h6>
+        </div>
+        </div>
+    </div>
+
+<footer class="page-footer indigo darken-4" style="width:100%">
+    <div class="container">
+    <div class="row">
+        <div class="col l6 s12">
+        <h5 class="white-text">Footer Content</h5>
+        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+            <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+            </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+    </footer>
+    
+</body>
+
+<script>
+function checkUrl() {
+    var inputed =document.getElementById("url").value;
+    // var urlCheck = 0
+    if(inputed != "a.b.com") {
+        document.getElementById("check").innerHTML = "올바른 url을 입력해주세요"
+    }
+                // } else if (data == '0') {
+                //     $("#checkaa").css("background-color", "#B0F6AC");
+                //     idCheck = 1;
+                //     if(idCheck==1 && pwdCheck == 1) {
+                //         $(".signupbtn").prop("disabled", false);
+                //         $(".signupbtn").css("background-color", "#4CAF50");
+                //         signupCheck();
+                //     } 
+                // } else if (data == '1') {
+                //     $(".signupbtn").prop("disabled", true);
+                //     $(".signupbtn").css("background-color", "#aaaaaa");
+                //     $("#checkaa").css("background-color", "#FFCECE");
+                //     idCheck = 0;
+        
+}
+
+
+</script>
+
+</html>
+
+            <!--// $(".flexform").css("background-color", "#aaaaaa");-->
+            <!--// $(".check").append("<p> 올바른 url을 입력해주세요.</p>");-->
+            <!--// urlCheck = 0;-->
+            
